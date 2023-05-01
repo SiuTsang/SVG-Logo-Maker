@@ -1,4 +1,5 @@
 const { Circle, Triangle, Square } = require("./lib/shape")
+const LOGO = require("./lib/logo");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -42,7 +43,7 @@ inquirer.prompt([
       shape = new Triangle()
   }
   shape.setColor(response.shape_color)
-  const logo = new logo()
+  const logo = new LOGO()
   logo.setText(response.text, response.text_color)
   logo.setShape(shape)
   fs.writeFileSync("logo.svg", logo.render())
